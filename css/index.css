@@ -1,0 +1,498 @@
+@charset "utf-8";
+/* =============================
+   ========  index.css  ========
+   ======== (Style Room) =======
+   ============================= */
+
+
+
+/* ========== Mobile(start) ========== */
+@media screen and (max-width: 767px) {
+
+
+	/* ======= visual 영역 ======= */
+	
+	section.visual { width: 100%; height: 100vh; }
+
+	section.visual div.slides { position: absolute; left: 0; top: 0; z-index: 1; width: 100%; height: 100%; opacity: 0; }
+
+	section.visual div.slides[class ~= "prev"] { opacity: 1; /*z-index: 5;*/ transform: translateX(-100%); }
+	section.visual div.slides[class ~= "cur"] { opacity: 1; /*z-index: 10;*/ transform: translateX(0%); }
+	section.visual div.slides[class ~= "next"] { opacity: 1; /*z-index: 5;*/ transform: translateX(100%); }
+
+	section.visual div.slides img { display: block; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.7); }
+
+	section.visual div.slides div.info_wrap { position: absolute; width: 70%; top: 52vh; left: 50%; transform: translate(-50%, -50%); color: #fff; text-align: center; }
+	section.visual div.slides div.info_wrap > p.title_pre { font-size: 0.875em; margin-bottom:  0.7142em; }
+	section.visual div.slides div.info_wrap > h3 { font-size: 1.5625em; margin-bottom: 0.6em; line-height: 1; font-family: "Montserrat-Regular"; letter-spacing: 3px; }
+
+	div.pagination { position: absolute; bottom: 20px; left: 0; width: 100%; z-index: 20; text-align: center; }
+	div.pagination > button { padding: 10px 0; line-height: 0; }
+	div.pagination > button + button { margin-left: 7px; }
+	div.pagination > button > span { display: inline-block; width: 60px; height: 3px; background: rgba(0, 0, 0, 0.3); }
+	div.pagination > button.active > span { background: #fff; transition: all 0.2s }
+	div.pagination > button:hover > span { background: #fff; transition: all 0.2s }
+
+	section.visual .dir_btns { display: inline-block; position: absolute; z-index: 30; width: 6%; min-width: 39px; height: 100%; }
+	section.visual .dir_btns[class ~= "prev"] { left: 0; top: 0; }
+	section.visual .dir_btns[class ~= "next"] { right: 0; top: 0; }
+	section.visual .dir_btns > span { position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; }
+
+	
+	/* ======= category 영역 ======= */
+	
+	br._M { display: none; }
+
+	section.category { padding: 3.5714em 0 1.7857em; }
+
+	section.category > div.inner_wrap > p.desc { font-size: 1em; margin-bottom: 2.1428em; padding: 0 1.4285em; word-break: keep-all; }
+
+	section.category > div.ul_wrap { position: relative; width: 100%; margin-left: auto; padding-left: 1.4285em; }
+
+	section.category div.ul_wrap > ul { overflow-x: auto; display: flex; padding-bottom: 15px; }
+	section.category div.ul_wrap > ul::-webkit-scrollbar { width: 3px; height: 3px; background: #ddd; }
+	section.category div.ul_wrap > ul::-webkit-scrollbar-thumb { background: #333; }
+	section.category div.ul_wrap > ul > li { flex: 0 0 230px; height: 320px; margin-right: 20px; }
+	section.category div.ul_wrap > ul > li:last-child { margin-right: 0; }
+	section.category div.ul_wrap > ul > li > a { position: relative; display: block; width: 100%; height: 100%; }
+	section.category div.ul_wrap > ul > li > a > img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+	section.category div.arrow-circle { display: none; }
+	section.category div.arrow-circle > div.arrow { display: none; }
+
+	section.category div.ul_wrap p.desc { position: absolute; top: 100%; left: 0; transform: translate(0, -100%); width: 100%; padding: 10px 0 10px 10px; background: rgba(0, 0, 0, 0.5); color: #fff; font-size: 1.1428em; font-family: "NotoSansKR-Medium"; }
+
+	
+	/* ======= projects 영역 ======= */
+
+	section.projects { margin: 1.7857em 0; padding: 2.8571em 1.4285em; background: #f6f5f3; }
+
+	section.projects h2 { line-height: 1.2; }
+
+	section.projects div.fl_wrap > div.desc_wrap { display: none; }
+	section.projects div.fl_wrap > div.img_wrap { position: relative; }
+	section.projects div.fl_wrap > div.img_wrap img { display: block; width: 100%; height: 100%; }
+
+	section.projects div.fl_wrap > div.img_wrap { display: none; position: relative; width: 100%; height: 90vw; margin-bottom: 20px; }
+
+	section.projects div.fl_wrap > div.img_wrap[class ~= "active"] { display: block;}
+	section.projects div.fl_wrap > div.img_wrap[class ~= "active"] a { position: absolute; top: 0; left: 0; display: block; width: 100%; height: 100%; }
+	section.projects div.fl_wrap > div.img_wrap[class ~= "active"] a:not(.active) { display: none; }
+  
+
+	section.projects div.fl_wrap > div.pn_wrap { position: relative; width: 100%; height: 60px; order: 3; font-size: 1.7857em; }
+	section.projects div.fl_wrap > div.pn_wrap > span { display: inline-block; position: absolute; }
+	section.projects div.fl_wrap > div.pn_wrap > span.cur { top: 35%; left: 37%; transform: translate(0, -50%); }
+	section.projects div.fl_wrap > div.pn_wrap > span.total { top: 65%; right: 37%; transform: translate(0, -50%); font-size: 0.72em; color: rgba(51, 51, 51, 0.7); }
+	section.projects div.fl_wrap > div.pn_wrap > span.deco { left: 52%; top: 54%; transform: translate(-50%, -50%); width: 20px; height: 30px; clip-path: polygon(95% 0, 100% 0, 5% 100%, 0% 100%); background: #333; }
+
+	section.projects div.pn_wrap button.dir_btns { position: absolute; width: 50px; height: 50px; }
+	section.projects div.pn_wrap button.dir_btns[class ~= "prev_arrow"] { top: 60%; left: 13%; transform: translate(0 , -50%); }
+	section.projects div.pn_wrap button.dir_btns[class ~= "next_arrow"] { top: 60%; right: 13%; transform: translate(0 , -50%); }
+	section.projects div.pn_wrap button.dir_btns > span { display: inline-block; width: 50px; height: 50px; }
+
+	section.projects div.img_pn_wrap { position: absolute; top: 22%; right: 3%; width: 100%; text-align: right; z-index: 20; }
+	section.projects div.img_pn_wrap > button { display: inline-block; padding: 5px; line-height: 0; }
+	section.projects div.img_pn_wrap > button + button { margin-left: 5px; }
+	section.projects div.img_pn_wrap > button > span {display: inline-block; width: 16px; height: 16px; border-radius: 50%; background: rgba(0, 0, 0, 0.3);  }
+	section.projects div.img_pn_wrap > button.active > span { background: #333; }
+
+
+	/* ======= product 영역 ======= */
+	
+	section.product { padding: 1.7857em 1.4285em; }
+	section.product > div.text_wrap { text-align: center; margin-bottom: 2.1428em; }
+	section.product > div.text_wrap > h2 { margin-bottom: 1.7391em; }
+	section.product > div.text_wrap > p.slogan { display: none; }
+	section.product > div.text_wrap > p.desc { position: relative; letter-spacing: -1px; }
+	section.product > div.text_wrap > p.desc::before { content: ""; position: absolute; top: -40%; left: 50%; transform: translate(-50%, 0); display: block; width: 60px; height: 1px; background: #333; }
+
+	section.product > div.img_wrap { position: relative; overflow: hidden; width: 100%; height: 70vw; }
+	section.product > div.img_wrap > div.slides { position: absolute; left: 0; top: 0; z-index: 1; width: 100%; height: 100%; opacity: 0; }
+	section.product > div.img_wrap > div.slides[class ~= "prev"] { opacity: 1; transform: translateX(-100%); }
+	section.product > div.img_wrap > div.slides[class ~= "cur"] { position: relative; opacity: 1; transform: translateX(0%); }
+	section.product > div.img_wrap > div.slides[class ~= "next"] { opacity: 1; transform: translateX(100%); }
+	section.product > div.img_wrap img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+	section.product > div.img_wrap > div.slides > div.info_wrap { position: absolute; bottom: 0; left: 0; width: 100%; height: 45px; background: rgba(0, 0, 0, 0.5); padding: 0 15px; }
+	section.product > div.img_wrap > div.slides > div.info_wrap > a {  position: relative; color: #fff; line-height: 45px; }
+	section.product > div.img_wrap > div.slides > div.info_wrap > a + a::before { content: ""; position: absolute; top: 55%; left: -0.71425em; transform: translate(-50%, -50%); display: block; width: 1px; height: 55%; background: #fff; }
+	section.product > div.img_wrap > div.slides > div.info_wrap > a + a { margin-left: 1.4285em; }
+
+	section.product > div.img_wrap button { position: absolute; width: 20px; height: 20px; z-index: 100; }
+	section.product > div.img_wrap button[class ~= "prev"] { bottom: 12.5px; right: 55px; }
+	section.product > div.img_wrap button[class ~= "prev"]::before { content: ""; position: absolute; top: 50%; right: -10px; transform: translate(0, -50%); display: block; width: 1px; height: 70%; background: rgba(255, 255, 255, 0.6); }
+	section.product > div.img_wrap button[class ~= "next"] { bottom: 12.5px; right: 15px; }
+	section.product > div.img_wrap button > span { position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; }
+
+
+	/* ======= brand 영역 ======= */
+
+	section.brand { padding: 1.7857em 0; }
+	section.brand img { width: 100%; object-fit: cover; filter: brightness(0.8); }
+
+	section.brand > div.info_wrap { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; padding: 0 1.4285em; color: #fff; text-align: center; word-break: keep-all; }
+	section.brand > div.info_wrap > p.title { display: block; font-size: 1.4285em; font-family: "MontSerrat-Medium"; margin-bottom: 0.75em; line-height: 1; }
+	section.brand > div.info_wrap > p.desc { font-family: "NotoSansKR-Medium"; margin-bottom: 2.1428em; }
+
+
+	/* ======= contact 영역 ======= */
+	
+	section.contact { padding: 1.7857em 1.4285em 3.5714em; }
+	section.contact div.con_L { position: relative; width: 100%; margin-bottom: 10px; }
+	section.contact div.con_R { position: relative; width: 100%; }
+	section.contact div.con_L img { display: block; width: 100%; height: 100%; object-fit: cover; }
+	section.contact div.con_R img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+	section.contact div.info_wrap { position: absolute; top: 68%; left: 50%; transform: translate(-50%, -50%); width: 100%; text-align: center; font-family: "NotoSansKR-Medium"; }
+	section.contact div.info_wrap > p.title { font-size: 1.1428em; margin-bottom: 0.7407em; line-height: 1; }
+	section.contact div.info_wrap > p.desc { display: none; }
+	section.contact div.con_R > div.info_wrap { color: #fff; }
+	section.contact div.con_L > div.info_wrap > a { border: 1px solid #333; }
+	section.contact div.con_R > div.info_wrap > a { border: 1px solid #fff; }
+
+
+}
+/* ========== Mobile(end) ========== */
+
+/*  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!						!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!	   Style Room		!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!						!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+/* ========== Tablet(start) ========== */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+	
+	br.M { display: none; }
+	
+	
+	/* ======= visual 영역 ======= */
+
+	section.visual { width: 100%; height: 100vh; }
+
+	section.visual div.slides { position: absolute; left: 0; top: 0; z-index: 1; width: 100%; height: 100%; opacity: 0; }
+
+	section.visual div.slides[class ~= "prev"] { opacity: 1; /*z-index: 5;*/ transform: translateX(-100%); }
+	section.visual div.slides[class ~= "cur"] { opacity: 1; /*z-index: 10;*/ transform: translateX(0%); }
+	section.visual div.slides[class ~= "next"] { opacity: 1; /*z-index: 5;*/ transform: translateX(100%); }
+
+	section.visual div.slides img { display: block; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.7); }
+
+	section.visual div.slides div.info_wrap { position: absolute; width: 100%; top: 52vh; left: 50%; transform: translate(-50%, -50%); color: #fff; text-align: center; }
+	section.visual div.slides div.info_wrap > p.title_pre { font-size: 1.25em; margin-bottom: 0.75em; }
+	section.visual div.slides div.info_wrap > h3 { font-size: 2.6875em; margin-bottom: 0.9302em; line-height: 1; font-family: "Montserrat-Regular"; letter-spacing: 3px; }
+
+	div.pagination { position: absolute; bottom: 20px; left: 0; width: 100%; z-index: 20; text-align: center; }
+	div.pagination > button { padding: 10px 0; line-height: 0; }
+	div.pagination > button + button { margin-left: 10px; }
+	div.pagination > button > span { display: inline-block; width: 120px; height: 4px; background: rgba(0, 0, 0, 0.3); }
+	div.pagination > button.active > span { background: #fff; transition: all 0.2s }
+	div.pagination > button:hover > span { background: #fff; transition: all 0.2s }
+
+	section.visual .dir_btns { display: inline-block; position: absolute; z-index: 30; width: 6%; min-width: 70px; height: 100%; }
+	section.visual .dir_btns[class ~= "prev"] { left: 0; top: 0; }
+	section.visual .dir_btns[class ~= "next"] { right: 0; top: 0; }
+	section.visual .dir_btns > span { position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; }
+
+	
+	/* ======= category 영역 ======= */
+	
+	section.category { padding: 5em 0 3.125em 1.75em; }
+
+	section.category > div.inner_wrap > p.desc { font-size: 1.125em; margin-bottom: 2.2222em; }
+
+	section.category > div.ul_wrap { position: relative; width: 100%; margin-left: auto; }
+
+	section.category div.ul_wrap > ul { overflow-x: auto; display: flex; padding-bottom: 20px; }
+	section.category div.ul_wrap > ul::-webkit-scrollbar { width: 3px; height: 3px; background: #ddd; }
+	section.category div.ul_wrap > ul::-webkit-scrollbar-thumb { background: #333; }
+	section.category div.ul_wrap > ul > li { flex: 0 0 320px; height: 450px; margin-right: 40px; }
+	section.category div.ul_wrap > ul > li:last-child { margin-right: 0; }
+	section.category div.ul_wrap > ul > li > a { position: relative; display: block; width: 100%; height: 100%; }
+	section.category div.ul_wrap > ul > li > a > img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+	section.category div.arrow-circle { display: none; }
+	section.category div.arrow-circle > div.arrow { display: none; }
+
+	section.category div.ul_wrap p.desc { position: absolute; top: 100%; left: 0; transform: translate(0, -100%); width: 100%; padding: 16px 0 16px 16px; background: rgba(0, 0, 0, 0.5); color: #fff; font-size: 1.125em; font-family: "NotoSansKR-Medium"; }
+
+
+	/* ======= projects 영역 ======= */
+	
+	section.projects { margin: 3.125em 0; padding: 3.75em 1.75em; background: #f6f5f3; }
+
+	section.projects h2 { line-height: 1.2; }
+
+	section.projects div.img_pn_wrap { display: none; }
+	section.projects div.desc_wrap > p.desc > span { display: none; }
+
+	section.projects div.fl_wrap { display: flex; height: 83vw; flex-wrap: wrap; flex-direction: column; }
+	
+	section.projects div.fl_wrap > div.img_wrap > a > img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+	section.projects div.fl_wrap > div.img_wrap[class ~= "iw_01"] { position: relative; width: 58%; height: 57vw; order: 1; margin: 0 20px 2vw 0; }
+	section.projects div.fl_wrap > div.img_wrap[class ~= "iw_01"] a { position: absolute; top: 0; left: 0; display: block; width: 100%; height: 100%; opacity: 1; }
+	section.projects div.fl_wrap > div.img_wrap[class ~= "iw_01"] a:not(.active) { opacity: 0; display: none; }
+	section.projects div.fl_wrap > div.img_wrap[class ~= "iw_02"] { position: relative; width: calc((100% - 58%) - 20px); height: 25vw; order: 4; margin-bottom: 20px; }
+	section.projects div.fl_wrap > div.img_wrap[class ~= "iw_02"] a { position: absolute; top: 0; left: 0; display: block; width: 100%; height: 100%; opacity: 1; }
+	section.projects div.fl_wrap > div.img_wrap[class ~= "iw_02"] a:not(.active) { opacity: 0; display: none; }
+	section.projects div.fl_wrap > div.img_wrap[class ~= "iw_03"] { position: relative; width: calc((100% - 58%) - 20px); height: 45vw; order: 5;  }
+	section.projects div.fl_wrap > div.img_wrap[class ~= "iw_03"] a { position: absolute; top: 0; left: 0; display: block; width: 100%; height: 100%; opacity: 1; }
+	section.projects div.fl_wrap > div.img_wrap[class ~= "iw_03"] a:not(.active) { opacity: 0; display: none; }
+
+	section.projects div.fl_wrap > div.desc_wrap { position: relative; width: 58%; height: 15vw; order: 2; margin-bottom: 4vw; word-break: keep-all; }
+	section.projects div.fl_wrap > div.desc_wrap > p.desc { position: absolute; top: 0; left: 0; width: 90%; height: 100%; line-height: 1.8; opacity: 0; z-index: 10; }
+	section.projects div.fl_wrap > div.desc_wrap > p.desc[class ~= "active"]{ opacity: 1; z-index: 5; }
+
+	section.projects div.fl_wrap > div.pn_wrap { position: relative; width: 58%; height: 5vw; order: 3; font-size: 2.1875em; }
+	section.projects div.fl_wrap > div.pn_wrap > span { display: inline-block; position: absolute; }
+	section.projects div.fl_wrap > div.pn_wrap > span.cur { top: 35%; left: 40%; transform: translate(0, -50%); }
+	section.projects div.fl_wrap > div.pn_wrap > span.total { top: 65%; right: 40%; transform: translate(0, -50%); font-size: 0.7142em; color: rgba(51, 51, 51, 0.7); }
+	section.projects div.fl_wrap > div.pn_wrap > span.deco { left: 52%; top: 54%; transform: translate(-50%, -50%); width: 30px; height: 40px; clip-path: polygon(95% 0, 100% 0, 5% 100%, 0% 100%); background: #333; }
+
+	section.projects div.pn_wrap button.dir_btns { position: absolute; width: 50px; height: 50px; }
+	section.projects div.pn_wrap button.dir_btns[class ~= "prev_arrow"] { top: 60%; left: 23%; transform: translate(0 , -50%); }
+	section.projects div.pn_wrap button.dir_btns[class ~= "next_arrow"] { top: 60%; right: 23%; transform: translate(0 , -50%); }
+	section.projects div.pn_wrap button.dir_btns > span { display: inline-block; width: 50px; height: 50px; }
+
+
+	/* ======= product 영역 ======= */
+
+	section.product { padding: 3.125em 1.75em; }
+	section.product > div.text_wrap { text-align: center; margin-bottom: 2.5em; }
+	section.product > div.text_wrap > h2 { margin-bottom: 0.6666em; }
+	section.product > div.text_wrap > p.slogan { font-size: 1.25em; font-family: "MontSerrat-Light"; margin-bottom: 3em; }
+	section.product > div.text_wrap > p.desc { position: relative; }
+	section.product > div.text_wrap > p.desc::before { content: ""; position: absolute; top: -40%; left: 50%; transform: translate(-50%, 0); display: block; width: 60px; height: 1px; background: #333; }
+
+	section.product > div.img_wrap { position: relative; overflow: hidden; width: 100%; height: 70vw; }
+	section.product > div.img_wrap > div.slides { position: absolute; left: 0; top: 0; z-index: 1; width: 100%; height: 100%; opacity: 0; }
+	section.product > div.img_wrap > div.slides[class ~= "prev"] { opacity: 1; transform: translateX(-100%); }
+	section.product > div.img_wrap > div.slides[class ~= "cur"] { position: relative; opacity: 1; transform: translateX(0%); }
+	section.product > div.img_wrap > div.slides[class ~= "next"] { opacity: 1; transform: translateX(100%); }
+	section.product > div.img_wrap img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+	section.product > div.img_wrap > div.slides > div.info_wrap { position: absolute; bottom: 0; left: 0; width: 100%; height: 80px; background: rgba(0, 0, 0, 0.5); padding: 0 20px; }
+
+	section.product > div.img_wrap > div.slides > div.info_wrap > a {  position: relative; color: #fff; line-height: 80px; font-size: 1.25em; }
+	section.product > div.img_wrap > div.slides > div.info_wrap > a + a::before { content: ""; position: absolute; top: 55%; left: -0.75em; transform: translate(-50%, -50%); display: block; width: 1px; height: 55%; background: #fff; }
+	section.product > div.img_wrap > div.slides > div.info_wrap > a + a { margin-left: 1.5em; }
+
+	section.product > div.img_wrap button {  position: absolute; width: 35px; height: 35px; z-index: 100; }
+	section.product > div.img_wrap button[class ~= "prev"] { bottom: 22.5px; right: 80px; }
+	section.product > div.img_wrap button[class ~= "prev"]::before { content: ""; position: absolute; top: 50%; right: -13px; transform: translate(0, -50%); display: block; width: 1px; height: 60%; background: rgba(255, 255, 255, 0.6); }
+	section.product > div.img_wrap button[class ~= "next"] { bottom: 22.5px; right: 20px; }
+	section.product > div.img_wrap button > span { position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; }
+
+
+	/* ======= brand 영역 ======= */
+
+	section.brand { padding: 3.125em 0; }
+	section.brand img { width: 100%; object-fit: cover; filter: brightness(0.8); }
+
+	section.brand > div.info_wrap { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; color: #fff; text-align: center; }
+	section.brand > div.info_wrap > p.title { font-size: 2.1875em; font-family: "MontSerrat-Medium"; margin-bottom: 0.8571em; line-height: 1; }
+	section.brand > div.info_wrap > p.desc { font-family: "NotoSansKR-Medium"; margin-bottom: 2.5em; }
+
+
+	/* ======= contact 영역 ======= */
+
+	section.contact { padding: 3.125em 1.75em 6.25em; }
+	section.contact div.con_L { position: relative; width: 100%; margin-bottom: 20px; }
+	section.contact div.con_R { position: relative; width: 100%; }
+	section.contact div.con_L img { display: block; width: 100%; height: 100%; object-fit: cover; }
+	section.contact div.con_R img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+	section.contact div.info_wrap { position: absolute; top: 67%; left: 50%; transform: translate(-50%, -50%); text-align: center; font-family: "NotoSansKR-Medium"; }
+	section.contact div.info_wrap > p.title { font-size: 1.6875em; margin-bottom: 0.7407em; line-height: 1; }
+	section.contact div.info_wrap > p.desc { margin-bottom: 1.875em; }
+	section.contact div.con_R > div.info_wrap { color: #fff; }
+	section.contact div.con_L > div.info_wrap > a { border: 2px solid #333; }
+	section.contact div.con_R > div.info_wrap > a { border: 2px solid #fff; }
+
+
+}
+/* ========== Tablet(end) ========== */
+
+/*  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!						!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!	   Style Room		!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!						!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+/* ========== Desktop(start) ========== */
+@media screen and (min-width: 1025px) {
+	
+	
+	br.M { display: none; }
+	
+	
+	/* ======= visual 영역 ======= */
+
+	section.visual { width: 100%; height: 100vh; }
+
+	section.visual div.slides { position: absolute; left: 0; top: 0; z-index: 1; width: 100%; height: 100%; opacity: 0; }
+
+	section.visual div.slides[class ~= "prev"] { opacity: 1; /*z-index: 5;*/ transform: translateX(-100%); }
+	section.visual div.slides[class ~= "cur"] { opacity: 1; /*z-index: 10;*/ transform: translateX(0%); }
+	section.visual div.slides[class ~= "next"] { opacity: 1; /*z-index: 5;*/ transform: translateX(100%); }
+
+	section.visual div.slides img { display: block; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.7); }
+
+	section.visual div.slides div.info_wrap { position: absolute; width: 100%; top: 52vh; left: 50%; transform: translate(-50%, -50%); color: #fff; text-align: center; }
+	section.visual div.slides div.info_wrap > p.title_pre { font-size: 1.5625em; margin-bottom: 0.8em; }
+	section.visual div.slides div.info_wrap > h3 { font-size: 3.4375em; margin-bottom: 0.7272em; line-height: 1; font-family: "Montserrat-Regular"; letter-spacing: 5px; }
+
+	div.pagination { position: absolute; bottom: 20px; left: 0; width: 100%; z-index: 20; text-align: center; }
+	div.pagination > button { padding: 10px 0; line-height: 0; }
+	div.pagination > button + button { margin-left: 10px; }
+	div.pagination > button > span { display: inline-block; width: 120px; height: 4px; background: rgba(0, 0, 0, 0.3); }
+	div.pagination > button.active > span { background: #fff; transition: all 0.2s }
+	div.pagination > button:hover > span { background: #fff; transition: all 0.2s }
+
+	section.visual .dir_btns { display: inline-block; position: absolute; z-index: 30; width: 6%; min-width: 70px; height: 100%; }
+	section.visual .dir_btns[class ~= "prev"] { left: 0; top: 0; }
+	section.visual .dir_btns[class ~= "next"] { right: 0; top: 0; }
+	section.visual .dir_btns > span { position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; }
+
+
+	/* ======= category 영역 ======= */
+	
+	section.category { padding: 6.25em 0 4.375em; }
+
+	section.category > div.inner_wrap > p.desc { font-size: 1.4375em; margin-bottom: 2.6086em; }
+
+	section.category > div.ul_wrap { position: relative; width: calc(100% - ((100% - 1200px) / 2)); margin-left: auto; }
+
+	section.category div.ul_wrap > ul { overflow-x: auto; display: flex; cursor: url("../images/ico_index_category_drag.png") 60 60, auto; padding-bottom: 30px; }
+	section.category div.ul_wrap > ul::-webkit-scrollbar { width: 3px; height: 3px; background: #ddd; }
+	section.category div.ul_wrap > ul::-webkit-scrollbar-thumb { background: #333; }
+	section.category div.ul_wrap > ul > li { flex: 0 0 405px; height: 570px; margin-right: 40px; }
+	section.category div.ul_wrap > ul > li:last-child { margin-right: 0; }
+	section.category div.ul_wrap > ul > li > a { position: relative; display: block; width: 100%; height: 100%; cursor: url("../images/ico_index_category_drag.png") 60 60, auto; }
+	section.category div.ul_wrap > ul > li > a > img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+	section.category div.arrow-circle { position: absolute; top: 50%; left: 0; transform: translate(-65%, -50%); width: 150px; height: 150px; border: 2px solid rgba(51, 51, 51, 0.8); border-radius: 100%; clip-path: circle(50% at 50% 50%); z-index: 50; }
+	section.category div.arrow-circle > div.arrow { position: absolute; top: 53%; left: 23%; transform: translate(0, -50%) scaleX(-1); width: 80px; height: 80px; background: rgba(51, 51, 51, 0.8); clip-path: polygon(0 49%, 97% 49%, 77% 27%, 79% 26%, 100% 49%, 100% 51%, 0 51%); z-index: 50; }
+
+	section.category div.ul_wrap p.desc { position: absolute; top: 100%; left: 0; transform: translate(0, -100%); width: 100%; padding: 20px 0 20px 20px; background: rgba(0, 0, 0, 0.5); color: #fff; font-size: 1.125em; font-family: "NotoSansKR-Medium"; }
+
+
+	/* ======= projects 영역 ======= */
+	
+	section.projects { margin: 4.375em 0; padding: 6.25em 0; background: #f6f5f3; }
+
+	section.projects h2 { line-height: 1.2; }
+
+	section.projects div.img_pn_wrap { display: none; }
+
+	section.projects div.fl_wrap { display: flex; width: 100%; height: 56vw; flex-wrap: wrap; flex-direction: column; }
+	
+	section.projects div.fl_wrap > div.img_wrap { overflow: hidden; }
+	section.projects div.fl_wrap > div.img_wrap img:hover { transform: scale(1.05); transition: ease 0.7s; }
+	section.projects div.fl_wrap > div.img_wrap > a > img { display: block; width: 100%; height: 100%; object-fit: cover; }
+	
+	section.projects div.fl_wrap > div.img_wrap[class ~= "iw_01"] { position: relative; width: 58%; height: 40vw; order: 1; margin: 0 20px 2vw 0; }
+	section.projects div.fl_wrap > div.img_wrap[class ~= "iw_01"] a { position: absolute; top: 0; left: 0; display: block; width: 100%; height: 100%; opacity: 1;}
+	section.projects div.fl_wrap > div.img_wrap[class ~= "iw_01"] a:not(.active) { opacity: 0; display: none; }
+	section.projects div.fl_wrap > div.img_wrap[class ~= "iw_02"] { position: relative; width: calc((100% - 58%) - 20px); height: 19vw; order: 4; margin-bottom: 20px; }
+	section.projects div.fl_wrap > div.img_wrap[class ~= "iw_02"] a { position: absolute; top: 0; left: 0; display: block; width: 100%; height: 100%; opacity: 1; }
+	section.projects div.fl_wrap > div.img_wrap[class ~= "iw_02"] a:not(.active) { opacity: 0; display: none; }
+	section.projects div.fl_wrap > div.img_wrap[class ~= "iw_03"] { position: relative; width: calc((100% - 58%) - 20px); height: 31vw; order: 5;  }
+	section.projects div.fl_wrap > div.img_wrap[class ~= "iw_03"] a { position: absolute; top: 0; left: 0; display: block; width: 100%; height: 100%; opacity: 1; }
+	section.projects div.fl_wrap > div.img_wrap[class ~= "iw_03"] a:not(.active) { opacity: 0; display: none; }
+
+	section.projects div.fl_wrap > div.desc_wrap { position: relative; width: 58%; height: 7vw; order: 2; margin-bottom: 3vw; word-break: keep-all; }
+	section.projects div.fl_wrap > div.desc_wrap > p.desc { position: absolute; top: 0; left: 0; display: block; width: 90%; height: 100%; line-height: 1.8; z-index: 10; }
+	section.projects div.fl_wrap > div.desc_wrap > p.desc:not(.active){ opacity: 0; z-index: 5; }
+
+	section.projects div.fl_wrap > div.pn_wrap { position: relative; width: 58%; height: 4vw; order: 3; font-size: 2.1875em; }
+	section.projects div.fl_wrap > div.pn_wrap > span { display: inline-block; position: absolute; }
+	section.projects div.fl_wrap > div.pn_wrap > span.cur { top: 35%; left: 43%; transform: translate(0, -50%); }
+	section.projects div.fl_wrap > div.pn_wrap > span.total { top: 65%; right: 43%; transform: translate(0, -50%); font-size: 0.7142em; color: rgba(51, 51, 51, 0.7); }
+	section.projects div.fl_wrap > div.pn_wrap > span.deco { left: 51%; top: 54%; transform: translate(-50%, -50%); width: 30px; height: 40px; clip-path: polygon(95% 0, 100% 0, 5% 100%, 0% 100%); background: #333; }
+
+	section.projects div.pn_wrap button.dir_btns { position: absolute; width: 50px; height: 50px; }
+	section.projects div.pn_wrap button.dir_btns[class ~= "prev_arrow"] { top: 60%; left: 30%; transform: translate(0 , -50%); }
+	section.projects div.pn_wrap button.dir_btns[class ~= "next_arrow"] { top: 60%; right: 30%; transform: translate(0 , -50%); }
+	section.projects div.pn_wrap button.dir_btns > span { display: inline-block; width: 50px; height: 50px; }
+
+
+	/* ======= product 영역 ======= */
+
+	section.product { display: flex; align-items: center; padding: 4.375em 0; }
+	section.product > div.text_wrap { flex-basis: 50%; text-align: center; }
+	section.product > div.text_wrap > h2 { margin-bottom: 1.1428em; }
+	section.product > div.text_wrap > p.slogan { font-size: 1.6875em; font-family: "MontSerrat-Light"; margin-bottom: 3.7037em; }
+	section.product > div.text_wrap > p.desc { position: relative; }
+	section.product > div.text_wrap > p.desc::before { content: ""; position: absolute; top: -70%; left: 50%; transform: translate(-50%, 0); display: block; width: 60px; height: 1px; background: #333; }
+
+	section.product > div.img_wrap { position: relative; flex-basis: 50%; overflow: hidden; width: 100%; height: 35vw; }
+	section.product > div.img_wrap > div.slides { position: absolute; left: 0; top: 0; z-index: 1; width: 100%; height: 100%; opacity: 0; }
+	section.product > div.img_wrap > div.slides[class ~= "prev"] { opacity: 1; transform: translateX(-100%); }
+	section.product > div.img_wrap > div.slides[class ~= "cur"] { opacity: 1; transform: translateX(0%); }
+	section.product > div.img_wrap > div.slides[class ~= "next"] { opacity: 1; transform: translateX(100%); }
+	section.product > div.img_wrap img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+	section.product > div.img_wrap > div.slides > div.info_wrap { position: absolute; bottom: 0; left: 0; width: 100%; height: 80px; background: rgba(0, 0, 0, 0.5); padding: 0 20px; }
+	section.product > div.img_wrap > div.slides > div.info_wrap > a { position: relative; color: #fff; line-height: 80px; font-size: 1.25em; }
+	section.product > div.img_wrap > div.slides > div.info_wrap > a + a::before { content: ""; position: absolute; top: 56%; left: -0.75em; transform: translate(-50%, -50%); display: block; width: 1px; height: 55%; background: #fff; }
+	section.product > div.img_wrap > div.slides > div.info_wrap > a + a { margin-left: 1.5em; }
+
+	section.product > div.img_wrap button { position: absolute; width: 35px; height: 35px; z-index: 100; }
+	section.product > div.img_wrap button[class ~= "prev"] { bottom: 22.5px; right: 80px; }
+	section.product > div.img_wrap button[class ~= "prev"]::before { content: ""; position: absolute; top: 50%; right: -13px; transform: translate(0, -50%); display: block; width: 1px; height: 60%; background: rgba(255, 255, 255, 0.6); }
+	section.product > div.img_wrap button[class ~= "next"] { bottom: 22.5px; right: 20px; }
+	section.product > div.img_wrap button > span { position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; }
+
+
+	/* ======= brand 영역 ======= */
+	
+	section.brand { padding: 4.375em 0; }
+	section.brand img { width: 100%; object-fit: cover; filter: brightness(0.8); }
+
+	section.brand > div.info_wrap { position: absolute; top: 50%; left: 50%; width: 100%; transform: translate(-50%, -50%); color: #fff; text-align: center; }
+	section.brand > div.info_wrap > p.title { font-size: 2.1875em; font-family: "MontSerrat-Medium"; margin-bottom: 0.8571em; line-height: 1; }
+	section.brand > div.info_wrap > p.desc { font-family: "NotoSansKR-Medium"; margin-bottom: 2.5em; }
+
+	
+	/* ======= contact 영역 ======= */
+
+	section.contact { padding: 4.375em 0 8.75em; }
+	section.contact div.con_L { position: relative; float: left; width: calc((100% / 2) - 10px); }
+	section.contact div.con_R { position: relative; float: right; width: calc((100% / 2) - 10px); }
+	section.contact div.con_L img { display: block; width: 100%; height: 100%; object-fit: cover; }
+	section.contact div.con_R img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+	section.contact div.info_wrap { position: absolute; top: 75%; left: 50%; transform: translate(-50%, -50%); width: 100%; text-align: center; font-family: "NotoSansKR-Medium"; }
+	section.contact div.info_wrap > p.title { font-size: 1.6875em; margin-bottom: 0.7407em; line-height: 1; }
+	section.contact div.info_wrap > p.desc { margin-bottom: 1.875em; }
+	section.contact div.con_R > div.info_wrap { color: #fff; }
+	section.contact div.con_L > div.info_wrap > a { border: 2px solid #333; }
+	section.contact div.con_R > div.info_wrap > a { border: 2px solid #fff; }
+
+
+}
+/* ========== Desktop(end) ========== */
