@@ -1,0 +1,261 @@
+<!DOCTYPE HTML>
+<html lang='ko'>
+<head>
+
+	<meta charset='utf-8'>
+	<title>Style Room</title>
+	<meta name="viewport" content="width=device-width">
+	<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="css/consulting.css">
+	<style>
+
+	</style>
+	<!-- [if it IE 9]
+		<script src="js/html5shiv.js"></script>
+	<![endif] -->
+	<script src="js/common.js"></script>
+	<script src="js/consulting.js"></script>
+	<script src="js/jquery-3.2.1.min.js"></script>
+	
+</head>
+
+<body>
+  
+  <header class="">
+		<div class="header_wrap">
+			<h1 class="logo_header"><a href="index.html"><span class="blind">logo_header</span></a></h1>
+			<nav>
+				<ul class="clearfix">
+					<li>
+						<button class="btn_nav _open">ABOUT</button>
+						<ul class="sub">
+							<li><a href="#">BRAND</a></li>
+							<li><a href="#">HISTORY</a></li>
+						</ul>
+					</li>
+					<li>
+						<button class="btn_nav _open">PRODUCTS</button>
+						<ul class="sub">
+							<li><a href="#">KITCHEN</a></li>
+							<li><a href="#">BATH</a></li>
+							<li><a href="#">FLOOR</a></li>
+							<li><a href="#">DOOR</a></li>
+							<li><a href="#">MIDDLE DOOR</a></li>
+							<li><a href="#">WINDOW</a></li>
+							<li><a href="#">INTERIOR FILM</a></li>
+						</ul>
+					</li>
+					<li>
+						<button class="btn_nav">PROJECTS</button>
+					</li>
+					<li>
+						<button class="btn_nav _open">CONTACT</button>
+						<ul class="sub">
+							<li><a href="#">CONSULTING</a></li>
+							<li><a href="#">INQUIRY</a></li>
+							<li><a href="#">COMUNITY</a></li>
+						</ul>
+					</li>
+					<li>
+						<button class="btn_nav">MAGAZINE</button>
+					</li>
+				</ul>
+			</nav>
+
+			<div class="utility">
+				<a href="#"><span class="blind">user</span></a><!--
+				--><a href="#"><span class="blind">search</span></a>
+			</div>
+			<button id="btn_menu" class="menu"><span class="blind">menu</span></button>
+		</div>	
+	</header>
+  
+    <section class="visual">
+        <h2 class="blind">visual section</h2>
+		<picture>
+			<source srcset="images/img_consulting_visaul_bg_D.jpg" media="(min-width: 1025px)">
+			<source srcset="images/img_consulting_visaul_bg_T,M.jpg" media="(max-width: 1024px)">
+			<img src="images/img_consulting_visaul_bg_D.jpg" alt="백그라운드 이미지">
+		</picture>
+        
+        <div class="info_wrap inner_wrap">
+            <h3>CONSULTING SERVICE</h3>
+            <p class="desc">쉽고 빠른 리모델링 상담 서비스를<br class="M"> 이용해보세요.</p>
+        </div>
+	</section>
+   
+    <section class="content">
+        <div class="inner_wrap">
+            <h2 class="blind">content section</h2>
+            <div class="cta_section">
+                <h3>쉽고 빠른<br>리모델링 상담 신청</h3>
+                <p>신청서를 작성하면 전문가와의 상담을 안내해 드립니다.</p>
+            </div>
+            <img src="images/img_consulting_content_bg.jpg" alt="줄자, 장판, 연필 등 리모델링에 필요한 용품들이 모여있는 이미지">
+            <form action="consulting.jsp" method="post">
+                <div class="name flex">
+                    <label for="name" class="star">이름</label><input type="text" id="name" name="name" minlength="1" placeholder="이름을 입력해주세요." required >
+                </div>
+
+                <div class="number flex">
+                    <label for="number" class="star">연락처</label><input type="tel" id="number" name="number" minlength="9" placeholder="연락처를 입력해주세요." required >
+                </div>
+
+                <div class="address">
+                    <label for="address" class="star">주소</label><input type="text" id="address" name="address" placeholder="주소를 입력해주세요." required>
+                </div>
+
+                 <div class="item">
+                    <p class="title star">관심품목</p>
+                    <div class="label_wrap">
+                        <label class="custom_chk door">
+                            도어
+                            <input type="checkbox" name="door" id="door">
+                            <span class="checkmark"></span>
+                        </label><!--
+                     --><label class="custom_chk middle_door">
+                            중문
+                            <input type="checkbox" name="middle_door" id="middle_door">
+                            <span class="checkmark"></span>
+                        </label><!--
+                     --><label class="custom_chk bath">
+                            바스
+                            <input type="checkbox" name="bath" id="bath">
+                            <span class="checkmark"></span>
+                        </label><!--
+                     --><label class="custom_chk kitchen">
+                            키친
+                            <input type="checkbox" name="kitchen" id="kitchen">
+                            <span class="checkmark"></span>
+                        </label><!--
+                     --><label class="custom_chk window">
+                            창호
+                            <input type="checkbox" name="window" id="window">
+                            <span class="checkmark"></span>
+                        </label><!--
+                     --><label class="custom_chk floor">
+                            마루
+                            <input type="checkbox" name="floor" id="floor">
+                            <span class="checkmark"></span>
+                        </label><!--
+                     --><label class="custom_chk interior_film">
+                            인테리어 필름
+                            <input type="checkbox" name="interior_film" id="interior_film">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>    
+                </div>
+
+                <div class="residence">
+                    <p class="title star">거주여부</p>
+                    <div class="label_wrap">
+                        <label class="custom_radio">
+                            살고있는 집
+                            <input type="radio" name="housing_status" id="living">
+                            <span class="radiomark"></span>
+                        </label>
+                        <label class="custom_radio">
+                            이사가는 집
+                            <input type="radio" name="housing_status" id="moving">
+                            <span class="radiomark"></span>
+                        </label>
+                    </div>    
+                </div>
+
+                <div class="timeframe flex">
+                    <label for="timeframe">예상 공사 시기</label><input type="date" id="timeframe" name="timeframe">
+                </div>
+
+                <div class="budget flex">
+                    <label for="budget_select">예산</label>
+                    <select name="budget" id="budget_select">
+                        <option value="" hidden>선택하세요.</option>
+                        <option value="3000만원 미만">3000만원 미만</option>
+                        <option value="3000만원">3000만원</option>
+                        <option value="4000만원">4000만원</option>
+                        <option value="5000만원">5000만원</option>
+                        <option value="6000만원">6000만원</option>
+                        <option value="7000만원">7000만원</option>
+                        <option value="8000만원">8000만원</option>
+                        <option value="9000만원">9000만원</option>
+                        <option value="1억원">1억원</option>
+                        <option value="1억원 초과">1억원 초과</option>
+                    </select>
+                </div>
+
+                <div class="branch flex">
+                    <label for="branch_select">상담 희망 지점</label>
+                    <select name="branch" id="branch_select">
+                        <option value="" hidden>선택하세요.</option>
+                        <option value="강남 본점">스타일룸 강남 본점</option>
+                        <option value="동탄">스타일룸 동탄</option>
+                        <option value="마포">스타일룸 마포</option>
+                        <option value="부천">스타일룸 부천</option>
+                        <option value="성남">스타일룸 성남</option>
+                        <option value="수원">스타일룸 수원</option>
+                        <option value="이촌">스타일룸 이촌</option>
+                        <option value="일산">스타일룸 일산</option>
+                        <option value="잠실">스타일룸 잠실</option>
+                        <option value="판교">스타일룸 판교</option>
+                    </select>
+                </div>
+
+                <div class="balance_beam flex">
+                    <label for="balance_beam">평형대</label><input type="text" id="balance_beam" name="balance_beam" placeholder="예시) 30평형" >
+                </div>
+
+                <div class="personal_info">
+                    <label for="personal_info" class="personal_info">
+                    개인정보처리방침에 동의합니다.
+                        <input type="checkbox" id="personal_info" name="personal_info">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+
+                <input type="submit" value="상담 신청하기">
+            </form>
+        </div>    
+    </section>
+   
+    <footer>
+		<div class="footer_top">
+			<div class="inner_wrap">
+				<h1 class="logo_footer"><a href="index.html"><span class="blind">logo_footer</span></a></h1>
+				<div class="footer_info clearfix">
+					<div class="info_L">
+						<p class="call">
+							<span>전화 문의</span>
+							<span>02-123-4567</span>
+						</p>
+						<p class="mail">
+							<span>메일 문의</span>
+							<span>styleroom@naver.com</span>
+						</p>
+					</div>
+					<div class="info_R">
+						<p>스타일룸</p>
+						<address>주소 : 서울시 관악구 신림로 750 - 23</address>
+						<p>대표이사 : 한우진</p>
+						<p>사업자 등록 번호 : 123-45-67890</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="footer_bottom">
+			<div class="inner_wrap">
+				<p class="copy">Copyright ⓒ STYLEROOM. All Rights Reserved.</p>
+				<ul class="footer_menu clearfix">
+					<li><a href="#">회사소개</a></li>
+					<li><a href="#"><strong>개인정보처리방침</strong></a></li>
+					<li><a href="#"><strong>이용약관</strong></a></li>
+					<li><a href="#">오시는 길</a></li>
+				</ul>
+			</div>
+		</div>
+	</footer>
+    
+</body>
+</html>

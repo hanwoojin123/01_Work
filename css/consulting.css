@@ -1,0 +1,260 @@
+@charset "utf-8";
+/* ==============================
+   ======  consulting.css  ======
+   ======== (Style Room) ========
+   ============================== */
+
+
+
+/* ========== Mobile(start) ========== */
+@media screen and (max-width: 767px) {
+    
+    
+    /* ======= visual 영역 ======= */
+    
+    section.visual { width: 100%; height: 100vh; }
+	section.visual img { display: block; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.75); }
+    
+    section.visual > .info_wrap[class ~= "inner_wrap"] { position: absolute; bottom: 5%; left: 50%; transform: translate(-50%, -50%); color: #fff; padding-left: 1.428em; }
+    section.visual > .info_wrap > h3 { font-size: 1.5714em; font-family: "Montserrat-Regular"; margin-bottom: 20px; line-height: 1; }
+    section.visual > .info_wrap > p { font-size: 1em; line-height: 1.5; }
+    
+    
+    /* ======= content 영역 ======= */
+    
+    section.content { padding: 3.5714em 1.428em 5em; }
+    section.content .cta_section > h3 { font-family: "NotoSansKR-Medium"; font-size: 1.571em; margin-bottom: 0.6818em; line-height: 1.5; }
+    section.content .cta_section > p { margin-bottom: 1.7857em; word-break: keep-all; }
+    
+    section.content img { display: block; width: 100%; height: 100%; min-height: 150px; object-fit: cover; margin-bottom: 2.1428em; }
+    
+    form > div { margin-bottom: 1.7857em; }
+
+    form div:not(.item, .residence, .personal_info) > input, select { display: block; width: 100%; border: none; border-bottom: 1px solid rgba(51, 51, 51, 0.6); height: 40px; font-size: 0.875rem; }
+    form div:not(.item, .residence, .personal_info) > input:focus, select:focus  { outline: none; border-bottom: 2px solid #333; }
+    form select, input::placeholder { font-size: 0.875rem; color: rgba(51, 51, 51, 0.38); font-family: "NotoSansKR-Medium"; }
+    form select { -webkit-appearance: none; appearance: none; background-image: url('../images/ico_consulting_content_arrow.png'); background-size: 15px; background-repeat: no-repeat; background-position: right center; cursor: pointer }
+    form select > option { font-family: "NotoSansKR-Regular"; color: #333; }
+    
+    form .item .custom_chk { position: relative; display: inline-block; width: calc((100% - 10px) / 2); height: 45px; line-height: 45px; cursor: pointer; text-align: center; }
+    form .item .custom_chk + .custom_chk { margin-left: 10px; }
+    form .item .custom_chk:nth-child(1) {margin-bottom: 10px;}
+    form .item .custom_chk:nth-child(3) { margin: 0 0 10px; }
+    form .item .custom_chk:nth-child(5) { margin: 0 0 10px; }
+    form .item .custom_chk:nth-child(7) { margin: 0; }
+    form .item .custom_chk > input { display: none; }
+    form .item .custom_chk > .checkmark { position: absolute; left: 0; top: 0%; display: inline-block; width: 100%; height: 45px; border: 1px solid rgba(51, 51, 51, 0.3); }
+    form .item .custom_chk > input:checked + .checkmark { background: rgba(51, 51, 51, 0.1); border: 2px solid #333; }
+    
+    form .residence .custom_radio { font-size: 1em; cursor: pointer; }
+    form .residence .custom_radio + .custom_radio { margin-left: 20px; }
+    form .residence .custom_radio input { display: none; }
+    form .residence .custom_radio > .radiomark { display: inline-block; width: 18px; height: 18px; border: 1px solid rgba(51, 51, 51, 0.6); border-radius: 100%; vertical-align: middle; margin: -3px 0 0 5px; }
+    form .residence .custom_radio > input:checked + .radiomark { border: 6px solid #333; }
+    
+    input[type="date"]::-webkit-calendar-picker-indicator {
+    background-image: url('../images/ico_consulting_content_callender.png'); background-size: contain; width: 28px; height: 28px; cursor: pointer; }
+    input[type="date"]::-webkit-input-placeholder { color: rgba(51, 51, 51, 0.38); }
+    input[type="date"]::placeholder { color: rgba(51, 51, 51, 0.38); }
+    
+    form div.personal_info { margin-bottom: 2.5em; text-align: right; font-family: "NotoSansKR-Medium"; }
+    form label.personal_info { cursor: pointer; }
+    form label.personal_info > input { display: none; }
+    form label.personal_info > .checkmark { display: inline-block; width: 18px; height: 18px; margin: -4px 0 0 10px; border: 1px solid rgba(51, 51, 51, 0.6); vertical-align: middle; }
+    form label.personal_info > input:checked + .checkmark { display: inline-block; width: 18px; height: 18px; margin: -4px 0 0 10px; background: url('../images/ico_consulting_content_chk.png') no-repeat; background-size: 100%; vertical-align: middle; }
+    
+    form input[type="submit"] { display: block; margin: 0 auto; padding: 0.75em 1.5em; color: #fff; background: #333; font-size: 1.142em; font-family: "NotoSansKR-Medium"; cursor: pointer; }
+    
+    label:not(.personal_info), .title { font-family: "NotoSansKR-Medium"; font-size: 1.142em; }
+    form .title { display: inline-block; margin-bottom: 15px; }
+    form .title ~ label { font-family: "NotoSansKR-Regular"; }
+
+    form .star { position: relative; }
+    form .star::after { content: ''; position: absolute; right: -11px; top: 4px; display: block; width: 7px; height: 100%; background: url('../images/ico_consulting_content_star.png') no-repeat; background-size: 100%; }
+    
+    
+}
+/* ========== Mobile(end) ========== */
+
+/*  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!						!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!	   Style Room		!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!						!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+/* ========== Tablet(start) ========== */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    
+    
+    br.M { display: none; }
+    
+    /* ======= visual 영역 ======= */
+    
+    section.visual { width: 100%; height: 100vh; }
+	section.visual img { display: block; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.75); }
+    
+    
+    section.visual > .info_wrap[class ~= "inner_wrap"] { position: absolute; bottom: 10%; left: 50%; transform: translate(-50%, -50%); color: #fff; padding-left: 1.75em; }
+    section.visual > .info_wrap > h3 { font-size: 2.5em; font-family: "Montserrat-Regular"; margin-bottom: 0.5em; line-height: 1; }
+    section.visual > .info_wrap > p { font-size: 1.25em;; line-height: 1; }
+    
+    
+    /* ======= content 영역 ======= */
+    
+    section.content { padding: 5em 1.75em 6.25em; }
+    section.content .cta_section > h3 { font-family: "NotoSansKR-Medium"; font-size: 1.875em; margin-bottom: 0.666em; line-height: 1.5; }
+    section.content .cta_section > p { margin-bottom: 1.875em; }
+    
+    section.content img { display: block; width: 100%; height: 100%; object-fit: cover; margin-bottom: 3.75em; }
+    
+    section.content form { display: flex; margin: 0 auto; justify-content: space-between; flex-wrap: wrap; gap: 50px; }
+    form > div.flex { flex: 0 0 46.4%; }
+    form > div:not(.flex) { flex-basis: 100%; }
+    
+    form div:not(.item, .residence, .personal_info) > input, select { display: block; width: 100%; border: none; border-bottom: 1px solid rgba(51, 51, 51, 0.6); height: 50px; font-size: 1rem; }
+    form div:not(.item, .residence, .personal_info) > input:focus, select:focus  { outline: none; border-bottom: 2px solid #333; }
+    form select, input::placeholder { font-size: 1rem; color: rgba(51, 51, 51, 0.38); font-family: "NotoSansKR-Medium"; }
+    form select { -webkit-appearance: none; appearance: none; background-image: url('../images/ico_consulting_content_arrow.png'); background-size: 18px; background-repeat: no-repeat; background-position: right center; cursor: pointer }
+    form select > option { font-family: "NotoSansKR-Regular"; color: #333; }
+    
+    form .item .custom_chk { position: relative; display: inline-block; width: calc((100% - 30px) / 3); height: 60px; line-height: 60px; cursor: pointer; text-align: center; }
+    form .item .custom_chk:nth-child(1) {margin-bottom: 15px;}
+    form .item .custom_chk + .custom_chk { margin-left: 15px; }
+    form .item .custom_chk:nth-child(4) { margin: 0 0 15px; }
+    form .item .custom_chk:nth-child(7) { margin-left: 0; }
+    form .item .custom_chk > input { display: none; }
+    form .item .custom_chk > .checkmark { position: absolute; left: 0; top: 0%; display: inline-block; width: 100%; height: 60px; border: 1px solid rgba(51, 51, 51, 0.3); }
+    form .item .custom_chk > input:checked + .checkmark { background: rgba(51, 51, 51, 0.1); border: 2px solid #333; }
+
+    form .residence .label_wrap { display: inline-block; }
+    form .residence .title { margin-right: 60px; }
+    form .residence .custom_radio { font-size: 1em; cursor: pointer; }
+    form .residence .custom_radio + .custom_radio { margin-left: 40px; }
+    form .residence .custom_radio input { display: none; }
+    form .residence .custom_radio > .radiomark { display: inline-block; width: 22px; height: 22px; border: 1px solid rgba(51, 51, 51, 0.6); border-radius: 100%; vertical-align: middle; margin: -3px 0 0 5px; }
+    form .residence .custom_radio > input:checked + .radiomark { border: 7px solid #333; }
+    
+    input[type="date"]::-webkit-calendar-picker-indicator {
+    background-image: url('../images/ico_consulting_content_callender.png'); background-size: contain; width: 32px; height: 32px; cursor: pointer; }
+    input[type="date"]::-webkit-input-placeholder { color: rgba(51, 51, 51, 0.38); }
+    input[type="date"]::placeholder { color: rgba(51, 51, 51, 0.38); }
+    
+    form div.personal_info { text-align: right; }
+    form label.personal_info { cursor: pointer; }
+    form label.personal_info > input { display: none; }
+    form label.personal_info > .checkmark { display: inline-block; width: 20px; height: 20px; margin: -6px 0 0 10px; border: 1px solid rgba(51, 51, 51, 0.6); vertical-align: middle; }
+    form label.personal_info > input:checked + .checkmark { display: inline-block; width: 20px; height: 20px; margin: -6px 0 0 10px; background: url('../images/ico_consulting_content_chk.png') no-repeat; background-size: 100%; vertical-align: middle; }
+    
+    form input[type="submit"] { margin: 20px auto 0; padding: 0.75em 1.5em; color: #fff; background: #333; font-size: 1.25em; font-family: "NotoSansKR-Medium"; cursor: pointer; }
+    
+    label, .title { font-family: "NotoSansKR-Medium"; font-size: 1.125em; }
+    form .title { display: inline-block; margin-bottom: 20px; }
+    form .title ~ label { font-family: "NotoSansKR-Regular"; }
+
+    form .star { position: relative; }
+    form .star::after { content: ''; position: absolute; right: -13px; top: 4px; display: block; width: 8px; height: 100%; background: url('../images/ico_consulting_content_star.png') no-repeat; background-size: 100%; }
+    
+    
+}
+/* ========== Tablet(end) ========== */
+
+/*  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!						!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!	   Style Room		!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!						!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+/* ========== Desktop(start) ========== */
+@media screen and (min-width: 1025px) {
+    
+    
+    br.M { display: none; }
+    
+    /* ======= visual 영역 ======= */
+    
+    section.visual { width: 100%; height: 100vh; }
+	section.visual img { display: block; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.75); }
+    
+    
+    section.visual > .info_wrap[class ~= "inner_wrap"] { position: absolute; bottom: 10%; left: 50%; transform: translate(-50%, -50%); color: #fff; }
+    section.visual > .info_wrap > h3 { font-size:  2.8125em; font-family: "Montserrat-Regular"; margin-bottom: 0.444em; line-height: 1; }
+    section.visual > .info_wrap > p { font-size: 1.375em; line-height: 1; }
+    
+    
+    /* ======= content 영역 ======= */
+    
+    section.content { padding: 6.25em 0 8.75em; }
+    section.content .cta_section > h3 { font-family: "NotoSansKR-Medium"; font-size: 2em; margin-bottom: 0.625em; line-height: 1.5; }
+    section.content .cta_section > p { margin-bottom: 2.5em; }
+    
+    section.content img { display: block; width: 100%; height: 100%; object-fit: cover; margin-bottom: 3.75em; }
+    
+    section.content form { display: flex; width: 75%; margin: 0 auto; justify-content: space-between; flex-wrap: wrap; gap: 50px; }
+    form > div.flex { flex: 0 0 46%; }
+    form > div:not(.flex) { flex-basis: 100%; }
+    
+    form div:not(.item, .residence, .personal_info) > input, select { display: block; width: 100%; border: none; border-bottom: 1px solid rgba(51, 51, 51, 0.6); height: 50px; font-size: 1rem; }
+    form div:not(.item, .residence, .personal_info) > input:focus, select:focus  { outline: none; border-bottom: 2px solid #333; }
+    form select, input::placeholder { font-size: 1rem; color: rgba(51, 51, 51, 0.38); font-family: "NotoSansKR-Medium"; }
+    form select { -webkit-appearance: none; appearance: none; background-image: url('../images/ico_consulting_content_arrow.png'); background-size: 18px; background-repeat: no-repeat; background-position: right center; cursor: pointer }
+    form select > option { font-family: "NotoSansKR-Regular"; color: #333; }
+    
+    form .item .custom_chk { position: relative; display: inline-block; width: calc((100% - 45px) / 4); height: 60px; line-height: 60px; cursor: pointer; text-align: center; }
+    form .item .custom_chk:nth-child(1) {margin-bottom: 15px;}
+    form .item .custom_chk + .custom_chk { margin-left: 15px; }
+    form .item .custom_chk:nth-child(5) { margin-left: 0; }
+    form .item .custom_chk > input { display: none; }
+    form .item .custom_chk > .checkmark { position: absolute; left: 0; top: 0%; display: inline-block; width: 100%; height: 60px; border: 1px solid rgba(51, 51, 51, 0.3); }
+    form .item .custom_chk > input:checked + .checkmark { background: rgba(51, 51, 51, 0.1); border: 2px solid #333; }
+    
+    form .residence .label_wrap { display: inline-block; }
+    form .residence .title { margin-right: 60px; }
+    form .residence .custom_radio { font-size: 1em; cursor: pointer; }
+    form .residence .custom_radio + .custom_radio { margin-left: 40px; }
+    form .residence .custom_radio input { display: none; }
+    form .residence .custom_radio > .radiomark { display: inline-block; width: 22px; height: 22px; border: 1px solid rgba(51, 51, 51, 0.6); border-radius: 100%; vertical-align: middle; margin: -3px 0 0 5px; }
+    form .residence .custom_radio > input:checked + .radiomark { border: 7px solid #333; }
+    
+    input[type="date"]::-webkit-calendar-picker-indicator {
+    background-image: url('../images/ico_consulting_content_callender.png'); background-size: contain; width: 32px; height: 32px; cursor: pointer; }
+    input[type="date"]::-webkit-input-placeholder { color: rgba(51, 51, 51, 0.38); }
+    input[type="date"]::placeholder { color: rgba(51, 51, 51, 0.38); }
+    
+    form div.personal_info { text-align: right; }
+    form label.personal_info { cursor: pointer; }
+    form label.personal_info > input { display: none; }
+    form label.personal_info > .checkmark { display: inline-block; width: 20px; height: 20px; margin: -6px 0 0 10px; border: 1px solid rgba(51, 51, 51, 0.6); vertical-align: middle; }
+    form label.personal_info > input:checked + .checkmark { display: inline-block; width: 20px; height: 20px; margin: -6px 0 0 10px; background: url('../images/ico_consulting_content_chk.png') no-repeat; background-size: 100%; vertical-align: middle; }
+    
+    form input[type="submit"] { margin: 20px auto 0; padding: 0.75em 1.5em; color: #fff; background: #333; font-size: 1.25em; font-family: "NotoSansKR-Medium"; cursor: pointer; }
+    
+    label, .title { font-family: "NotoSansKR-Medium"; font-size: 1.125em; }
+    form .title { display: inline-block; margin-bottom: 20px; }
+    form .title ~ label { font-family: "NotoSansKR-Regular"; }
+
+    form .star { position: relative; }
+    form .star::after { content: ''; position: absolute; right: -13px; top: 4px; display: block; width: 8px; height: 100%; background: url('../images/ico_consulting_content_star.png') no-repeat; background-size: 100%; }
+    
+    
+}
+/* ========== Desktop(end) ========== */

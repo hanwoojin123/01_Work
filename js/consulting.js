@@ -1,12 +1,4 @@
 window.addEventListener('load', function(){
-	let $anchors_all = document.getElementsByTagName('a');
-	console.log($anchors_all);
-	for(var i = 0; i < $anchors_all.length; i++){
-		$anchors_all[i].addEventListener('click', function(e){
-			var e = e ? e : window.event;
-			if(this.getAttribute('href') == '#') e.preventDefault();
-		});
-	}
 	
 	var isMobile = false;
 
@@ -15,56 +7,35 @@ window.addEventListener('load', function(){
 	}
 
 
-	const $elm_body = document.getElementsByTagName('body')[0];
-	const $elm_header = document.getElementsByTagName('header')[0];
-	const $elm_nav = document.getElementsByTagName('nav')[0];
-	const $btn_menu = document.getElementById('btn_menu');
-	const $btn_nav = document.getElementsByClassName('btn_nav');
+    $(document).ready(function() {
+        
+        $('form').submit(function(event) {
+            var itemCount = $('.item input[type="checkbox"]:checked').length;
+            var residenceCount = $('.residence input[type="radio"]:checked').length;
+            var personalInfoCount = $('.personal_info input[type="checkbox"]:checked').length;
 
-
-	$btn_menu.addEventListener('click', function(){
-		nav_init()
-		cls_toggle($elm_header, 'on');
-		if($elm_header.classList.contains("on")) $elm_body.style.overflow = "hidden";
-		else $elm_body.style.overflow = "auto";
-	});
-
-	for (var i = 0; i < $btn_nav.length; i++) {
-		$btn_nav[i].index = i;
-		$btn_nav[i].onclick = function(){
-			if (!this.parentNode.classList.contains('active')) {
-				nav_init();
-				btn_act($btn_nav, this.index);
-			} else {
-				this.parentNode.classList.remove('active');
-			}
-		}
-	}
-
-	function nav_init(){
-		btn_act($btn_nav, 0);
-		const navItems = document.querySelectorAll('nav > ul > li');
-		for (const navItem of navItems) {
-			navItem.classList.remove('active');
-		}
-	}
-
-	function btn_act(_elm, _idx){
-		for(var i = 0; i < _elm.length; i++) {
-			_elm[i].parentNode.classList.remove("active");
-		}
-		_elm[_idx].parentNode.classList.add("active");
-	}
-	function bg_act(_elm, _idx){
-		for (var i = 0; i < _elm.length; i++) {
-			_elm[i].classList.remove("active");
-		}
-		_elm[_idx].classList.add("active");
-	}
-
-	function cls_toggle(_target, _clsName){
-		_target.classList.toggle(_clsName);
-	}
+            if (itemCount < 1) {
+                alert('관심품목을 선택해주세요.');
+                event.preventDefault();
+            } else if (itemCount >= 1 && residenceCount < 1) {
+                alert('거주여부를 선택해주세요.');
+                event.preventDefault();
+            } else if (itemCount >= 1 && residenceCount >= 1 && personalInfoCount < 1) {
+                alert('개인정보처리방침에 동의해주세요.');
+                event.preventDefault();
+            }
+        });
+        
+         $('form select').change(function() {
+            var selectedOption = $(this).find('option:selected');
+            if (selectedOption.val() !== '') {
+                $(this).css({'color': '#333', 'font-family': 'NotoSansKR-Regular'});
+            } else {
+                $(this).css('color', 'rgba(51, 51, 51, 0.38)');
+            }
+        });
+        
+    });
 
 
 	if(!isMobile){
