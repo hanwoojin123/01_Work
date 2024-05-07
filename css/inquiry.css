@@ -1,0 +1,284 @@
+@charset "utf-8";
+/* =============================
+   =======  inquiry.css  =======
+   ======== (Style Room) =======
+   ============================= */
+
+
+
+/* ========== Mobile(start) ========== */
+@media screen and (max-width: 767px) {
+    
+    
+    /* ======= visual 영역 ======= */
+    
+    section.visual { width: 100%; height: 100vh; }
+	section.visual img { display: block; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.7); }
+    
+    section.visual > .info_wrap[class ~= "inner_wrap"] { position: absolute; bottom: 5%; left: 50%; transform: translate(-50%, -50%); color: #fff; padding-left: 1.428em; }
+    section.visual > .info_wrap > h2 { font-size: 1.5714em; font-family: "Montserrat-Regular"; margin-bottom: 0.6818em; line-height: 1; }
+    section.visual > .info_wrap > p { font-size: 1em; line-height: 1.5; }
+    
+    
+    /* ======= qna_table 영역 ======= */
+    
+    section.qna_table { padding: 3.5714em 1.428em 2.5em;  }
+    section.qna_table h2 { font-family: "NotoSansKR-Medium"; font-size: 1.4285em; margin-bottom: 2em; }
+    
+    section.qna_table ul.category { overflow: hidden; margin-bottom: 2.1428em; }
+    section.qna_table ul.category > li { float: left; width: 25%; border-bottom: 1px solid #333; font-size: 1em; }
+    section.qna_table ul.category > li.active { background: #333; color: #fff; }
+    section.qna_table ul.category > li > button { display: block; width: 100%; height: 100%; padding: 10px 0; text-align: center; }
+    
+    table { table-layout: fixed; width: 100%; border-bottom: 1px solid rgba(51, 51, 51, 0.3); font-size: 0.9285em; }
+    table tr { border-top: 1px solid rgba(51, 51, 51, 0.3) }
+    table tr > td { padding: 1.1538em 0; }
+    
+    td.qna { position: relative; width: 10%; }
+    td.qna::before { content: ''; position: absolute; top: 50%; left: 0; display: block; width: 14px; height: 14px; background: url('../images/ico_inquiry_table_qna.png') no-repeat; background-size: 100%; transform: translateY(-50%); }
+    td.category { width: 10%; vertical-align: middle; }
+    td.content { width: 70%; padding-left: 10px; word-break: keep-all; }
+    td.more { position: relative; width: 10%; text-align: center; }
+    td.more::before { content: ''; position: absolute; right: 0; top: 50%; display: block; width: 14px; height: 14px; background: url('../images/ico_inquiry_table_more.png') no-repeat; background-size: 100%; transform: translateY(-50%); }
+    
+    div.pagination { text-align: center; margin-top: 20px; }
+    div.pagination ul { display: inline-block; margin: 0 5px; vertical-align: middle; }
+    div.pagination ul > li { display: inline-block; width: 2.1875em; height: 2.1875em; border: 1px solid #333; }
+    div.pagination ul > li > button { display: block; width: 100%; height: 100%; text-align: center; }
+    div.pagination ul > li.active { background: #333; color: #fff; }
+    div.pagination .dir_btns { position: relative; width: 35px; height: 35px; z-index: 100; vertical-align: middle; }
+    div.pagination .dir_btns > span { position: absolute; top: 0; left: 0; right: 0; bottom: 0; margin: auto; }
+    div.pagination .dir_btns[class ~= "prev"] > span { width: 18px; height: 18px; clip-path: polygon(30% 0, 78% 50%, 30% 100%, 22% 100%, 70% 50%, 22% 0%); transform: rotate(-180deg) translateX(2px); background: #333; }
+    div.pagination .dir_btns[class ~= "next"] > span { width: 18px; height: 18px; clip-path: polygon(30% 0, 78% 50%, 30% 100%, 22% 100%, 70% 50%, 22% 0%); transform: translateX(2px); background: #333; }
+    
+    
+    /* ======= inquiry 영역 ======= */
+    
+    section.inquiry { padding: 2.5em 1.428em 5em; }
+    section.inquiry .cta_section > h2 { font-family: "NotoSansKR-Medium"; font-size: 1.4285em; margin-bottom: 0.75em; }
+    section.inquiry .cta_section > p { margin-bottom: 2.1428em; }
+    
+    form > div { margin-bottom: 1.7857em; }
+        
+    form div > input, textarea { display: block; width: 100%; border: none; border-bottom: 1px solid rgba(51, 51, 51, 0.6); height: 40px;  }
+    form div > input:focus, textarea:focus { outline: none; border-bottom: 2px solid #333; }
+    form div > input::placeholder { font-size: 0.875rem; color: rgba(51, 51, 51, 0.38); font-family: "NotoSansKR-Medium"; }
+    form div > textarea::placeholder { font-size: 0.875rem; color: rgba(51, 51, 51, 0.38); font-family: "NotoSansKR-Medium"; }
+    
+    form div.personal_info { margin-bottom: 2.5em; text-align: right; font-family: "NotoSansKR-Medium"; }
+    form label.personal_info { cursor: pointer; }
+    form label.personal_info > input { display: none; }
+    form label.personal_info > .checkmark { display: inline-block; width: 18px; height: 18px; margin: -4px 0 0 10px; border: 1px solid rgba(51, 51, 51, 0.6); vertical-align: middle; }
+    form label.personal_info > input:checked + .checkmark { display: inline-block; width: 18px; height: 18px; margin: -4px 0 0 10px; background: url('../images/ico_consulting_content_chk.png') no-repeat; background-size: 100%; vertical-align: middle; }
+    
+    form input[type="submit"] { display: block; margin: 0 auto; padding: 0.75em 1.5em; color: #fff; background: #333; font-size: 1.142em; font-family: "NotoSansKR-Medium"; cursor: pointer; }
+    
+    form textarea { height: 200px; resize: none; }
+    
+    form label { font-family: "NotoSansKR-Medium"; font-size: 1rem; }
+    form div.inquiry_content > label { display: inline-block; margin-bottom: 12px; }
+    
+    form .star { position: relative; }
+    form .star::after { content: ''; position: absolute; right: -11px; top: 4px; display: block; width: 7px; height: 100%; background: url('../images/ico_consulting_content_star.png') no-repeat; background-size: 100%; }
+    
+    
+}
+/* ========== Mobile(end) ========== */
+
+/*  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!						!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!	   Style Room		!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!						!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+/* ========== Tablet(start) ========== */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    
+    
+    br.M { display: none; }
+    
+    /* ======= visual 영역 ======= */
+    
+    section.visual { width: 100%; height: 100vh; }
+	section.visual img { display: block; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.7); }
+    
+    section.visual > .info_wrap[class ~= "inner_wrap"] { position: absolute; bottom: 10%; left: 50%; transform: translate(-50%, -50%); color: #fff; padding-left: 1.75em; }
+    section.visual > .info_wrap > h2 { font-size: 2.5em; font-family: "Montserrat-Regular"; margin-bottom: 0.5em; line-height: 1; }
+    section.visual > .info_wrap > p { font-size: 1.25em;; line-height: 1; }
+    
+    
+    /* ======= qna_table 영역 ======= */
+    
+    section.qna_table { padding: 5em 1.75em 3.125em;  }
+    section.qna_table h2 { font-family: "NotoSansKR-Medium"; font-size: 1.875em; margin-bottom: 1.6666em; }
+    
+    section.qna_table ul.category { overflow: hidden; margin-bottom: 3.75em; }
+    section.qna_table ul.category > li { float: left; width: 25%; border-bottom: 1px solid #333; font-size: 1.125em; }
+    section.qna_table ul.category > li.active { background: #333; color: #fff; }
+    section.qna_table ul.category > li > button { display: block; width: 100%; height: 100%; padding: 12px 0; text-align: center; }
+    
+    table { table-layout: fixed; width: 100%; border-bottom: 1px solid rgba(51, 51, 51, 0.3); }
+    table tr { border-top: 1px solid rgba(51, 51, 51, 0.3) }
+    table tr > td { padding: 1.5625em 0; }
+    
+    td.qna { position: relative; width: 12%; }
+    td.qna::before { content: ''; position: absolute; top: 50%; left: 20px; display: block; width: 22px; height: 22px; background: url('../images/ico_inquiry_table_qna.png') no-repeat; background-size: 100%; transform: translateY(-50%); }
+    td.category { width: 12%; vertical-align: middle; word-break: keep-all; }
+    td.content { width: 64%; }
+    td.more { position: relative; width: 12%; text-align: center; }
+    td.more::before { content: ''; position: absolute; right: 20px; top: 50%; display: block; width: 20px; height: 20px; background: url('../images/ico_inquiry_table_more.png') no-repeat; background-size: 100%; transform: translateY(-50%); }
+    
+    div.pagination { text-align: center; margin-top: 30px; }
+    div.pagination ul { display: inline-block; margin: 0 10px; vertical-align: middle; }
+    div.pagination ul > li { display: inline-block; width: 2.1875em; height: 2.1875em; border: 1px solid #333; }
+    div.pagination ul > li > button { display: block; width: 100%; height: 100%; text-align: center; }
+    div.pagination ul > li.active { background: #333; color: #fff; }
+    div.pagination .dir_btns { position: relative; width: 40px; height: 40px; z-index: 100; vertical-align: middle; }
+    div.pagination .dir_btns > span { position: absolute; top: 0; left: 0; right: 0; bottom: 0; margin: auto; }
+    div.pagination .dir_btns[class ~= "prev"] > span { width: 20px; height: 20px; clip-path: polygon(30% 0, 78% 50%, 30% 100%, 22% 100%, 70% 50%, 22% 0%); transform: rotate(-180deg) translateX(2px); background: #333; }
+    div.pagination .dir_btns[class ~= "next"] > span { width: 20px; height: 20px; clip-path: polygon(30% 0, 78% 50%, 30% 100%, 22% 100%, 70% 50%, 22% 0%); transform: translateX(2px); background: #333; }
+    
+    
+    /* ======= inquiry 영역 ======= */
+    
+    section.inquiry { padding: 3.125em 1.75em 6.25em; }
+    section.inquiry .cta_section > h2 { font-family: "NotoSansKR-Medium"; font-size: 1.875em; margin-bottom: 0.666em; }
+    section.inquiry .cta_section > p { margin-bottom: 3.125em; }
+    
+    section.inquiry form { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 50px; }
+    form > div.flex { flex: 0 0 46%; }
+    form > div:not(.flex) { flex-basis: 100%; }
+    
+    form div > input, textarea { display: block; width: 100%; border: none; border-bottom: 1px solid rgba(51, 51, 51, 0.6); height: 50px; }
+    form div > input:focus, textarea:focus { outline: none; border-bottom: 2px solid #333; }
+    form div > input::placeholder { font-size: 1rem; color: rgba(51, 51, 51, 0.38); font-family: "NotoSansKR-Medium"; }
+    form div > textarea::placeholder { font-size: 1rem; color: rgba(51, 51, 51, 0.38); font-family: "NotoSansKR-Medium"; }
+    
+    form div.personal_info { text-align: right; }
+    form label.personal_info { cursor: pointer; }
+    form label.personal_info > input { display: none; }
+    form label.personal_info > .checkmark { display: inline-block; width: 20px; height: 20px; margin: -6px 0 0 10px; border: 1px solid rgba(51, 51, 51, 0.6); vertical-align: middle; }
+    form label.personal_info > input:checked + .checkmark { display: inline-block; width: 20px; height: 20px; margin: -6px 0 0 10px; background: url('../images/ico_consulting_content_chk.png') no-repeat; background-size: 100%; vertical-align: middle; }
+    
+    form input[type="submit"] { margin: 20px auto 0; padding: 0.75em 1.5em; color: #fff; background: #333; font-size: 1.25em; font-family: "NotoSansKR-Medium"; cursor: pointer; }
+    
+    form textarea { height: 300px; resize: none; }
+    
+    form label { font-family: "NotoSansKR-Medium"; font-size: 1.125em; }
+    form div.inquiry_content > label { display: inline-block; margin-bottom: 12px; }
+    
+    form .star { position: relative; }
+    form .star::after { content: ''; position: absolute; right: -13px; top: 4px; display: block; width: 8px; height: 100%; background: url('../images/ico_consulting_content_star.png') no-repeat; background-size: 100%; }
+    
+    
+}
+/* ========== Tablet(end) ========== */
+
+/*  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!						!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!	   Style Room		!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!						!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+/* ========== Desktop(start) ========== */
+@media screen and (min-width: 1025px) {
+    
+    
+    br.M { display: none; }
+    
+    /* ======= visual 영역 ======= */
+    
+    section.visual { width: 100%; height: 100vh; }
+	section.visual img { display: block; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.7); }
+    
+    section.visual > .info_wrap[class ~= "inner_wrap"] { position: absolute; bottom: 10%; left: 50%; transform: translate(-50%, -50%); color: #fff; }
+    section.visual > .info_wrap > h2 { font-size:  2.8125em; font-family: "Montserrat-Regular"; margin-bottom: 0.444em; line-height: 1; }
+    section.visual > .info_wrap > p { font-size: 1.375em; line-height: 1; }
+    
+    
+    /* ======= qna_table 영역 ======= */
+    
+    section.qna_table { padding: 6.25em 0 4.375em;  }
+    section.qna_table h2 { font-family: "NotoSansKR-Medium"; font-size: 2em; margin-bottom: 1.875em; }
+    
+    section.qna_table ul.category { overflow: hidden; margin-bottom: 3.75em; }
+    section.qna_table ul.category > li { float: left; width: 25%; border-bottom: 1px solid #333; font-size: 1.125em; }
+    section.qna_table ul.category > li.active { background: #333; color: #fff; }
+    section.qna_table ul.category > li > button { display: block; width: 100%; height: 100%; padding: 12px 0; text-align: center; }
+    
+    table { table-layout: fixed; width: 100%; border-bottom: 1px solid rgba(51, 51, 51, 0.3); }
+    table tr { border-top: 1px solid rgba(51, 51, 51, 0.3); }
+    table tr > td { padding: 1.5625em 0; }
+    
+    td.qna { position: relative; width: 12%; }
+    td.qna::before { content: ''; position: absolute; top: 50%; left: 20px; display: block; width: 22px; height: 22px; background: url('../images/ico_inquiry_table_qna.png') no-repeat; background-size: 100%; transform: translateY(-50%); }
+    td.category { width: 12%; vertical-align: middle; word-break: keep-all; }
+    td.content { width: 64%; }
+    td.more { position: relative; width: 12%; text-align: center; }
+    td.more > button { content: ''; position: absolute; right: 20px; top: 50%; display: block; width: 40px; height: 40px; background: url('../images/ico_inquiry_table_more.png') no-repeat center; background-size: 50%; transform: translateY(-50%); }
+    
+    div.pagination { text-align: center; margin-top: 30px; }
+    div.pagination ul { display: inline-block; margin: 0 10px; vertical-align: middle; }
+    div.pagination ul > li { display: inline-block; width: 2.1875em; height: 2.1875em; border: 1px solid #333; }
+    div.pagination ul > li > button { display: block; width: 100%; height: 100%; text-align: center; }
+    div.pagination ul > li.active { background: #333; color: #fff; }
+    div.pagination .dir_btns { position: relative; width: 40px; height: 40px; z-index: 100; vertical-align: middle; }
+    div.pagination .dir_btns > span { position: absolute; top: 0; left: 0; right: 0; bottom: 0; margin: auto; }
+    div.pagination .dir_btns[class ~= "prev"] > span { width: 20px; height: 20px; clip-path: polygon(30% 0, 78% 50%, 30% 100%, 22% 100%, 70% 50%, 22% 0%); transform: rotate(-180deg) translateX(2px); background: #333; }
+    div.pagination .dir_btns[class ~= "next"] > span { width: 20px; height: 20px; clip-path: polygon(30% 0, 78% 50%, 30% 100%, 22% 100%, 70% 50%, 22% 0%); transform: translateX(2px); background: #333; }
+    
+    
+    /* ======= inquiry 영역 ======= */
+    
+    section.inquiry { padding: 4.375em 0 8.75em; }
+    section.inquiry .cta_section > h2 { font-family: "NotoSansKR-Medium"; font-size: 2em; margin-bottom: 0.625em }
+    section.inquiry .cta_section > p { margin-bottom: 3.75em; }
+    
+    section.inquiry form { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 50px; }
+    form > div.flex { flex: 0 0 46%; }
+    form > div:not(.flex) { flex-basis: 100%; }
+    
+    form div > input, textarea { display: block; width: 100%; border: none; border-bottom: 1px solid rgba(51, 51, 51, 0.6); height: 50px;  }
+    form div > input:focus, textarea:focus { outline: none; border-bottom: 2px solid #333; }
+    form div > input::placeholder { font-size: 1rem; color: rgba(51, 51, 51, 0.38); font-family: "NotoSansKR-Medium"; }
+    form div > textarea::placeholder { font-size: 1rem; color: rgba(51, 51, 51, 0.38); font-family: "NotoSansKR-Medium"; }
+    
+    form div.personal_info { text-align: right; }
+    form label.personal_info { cursor: pointer; }
+    form label.personal_info > input { display: none; }
+    form label.personal_info > .checkmark { display: inline-block; width: 20px; height: 20px; margin: -6px 0 0 10px; border: 1px solid rgba(51, 51, 51, 0.6); vertical-align: middle; }
+    form label.personal_info > input:checked + .checkmark { display: inline-block; width: 20px; height: 20px; margin: -6px 0 0 10px; background: url('../images/ico_consulting_content_chk.png') no-repeat; background-size: 100%; vertical-align: middle; }
+    
+    form input[type="submit"] { margin: 20px auto 0; padding: 0.75em 1.5em; color: #fff; background: #333; font-size: 1.25em; font-family: "NotoSansKR-Medium"; cursor: pointer; }
+    
+    form textarea { height: 300px; resize: none; }
+    
+    form label { font-family: "NotoSansKR-Medium"; font-size: 1.125em; }
+    form div.inquiry_content > label { display: inline-block; margin-bottom: 12px; }
+    
+    form .star { position: relative; }
+    form .star::after { content: ''; position: absolute; right: -13px; top: 4px; display: block; width: 8px; height: 100%; background: url('../images/ico_consulting_content_star.png') no-repeat; background-size: 100%; }
+    
+    
+}
+/* ========== Desktop(end) ========== */
