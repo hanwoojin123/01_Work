@@ -13,7 +13,7 @@
     /* ======= visual 영역 ======= */
     
     section.visual { width: 100%; height: 100vh; }
-	section.visual img { display: block; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.7); }
+	section.visual img { display: block; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.75); }
     
     section.visual > .info_wrap[class ~= "inner_wrap"] { position: absolute; bottom: 5%; left: 50%; transform: translate(-50%, -50%); color: #fff; padding-left: 1.428em; }
     section.visual > .info_wrap > h2 { font-size: 1.5714em; font-family: "Montserrat-Regular"; margin-bottom: 0.6818em; line-height: 1; }
@@ -219,7 +219,7 @@
     /* ======= qna_table 영역 ======= */
     
     section.qna_table { padding: 6.25em 0 4.375em;  }
-    section.qna_table h2 { font-family: "NotoSansKR-Medium"; font-size: 2em; margin-bottom: 1.875em; }
+    section.qna_table h2 { font-family: "NotoSansKR-Medium"; font-size: 2.1875em; margin-bottom: 1.7142em; }
     
     section.qna_table ul.category { overflow: hidden; margin-bottom: 3.75em; }
     section.qna_table ul.category > li { float: left; width: 25%; border-bottom: 1px solid #333; font-size: 1.125em; }
@@ -251,7 +251,7 @@
     /* ======= inquiry 영역 ======= */
     
     section.inquiry { padding: 4.375em 0 8.75em; }
-    section.inquiry .cta_section > h2 { font-family: "NotoSansKR-Medium"; font-size: 2em; margin-bottom: 0.625em }
+    section.inquiry .cta_section > h2 { font-family: "NotoSansKR-Medium"; font-size: 2.1875em; margin-bottom: 0.5714em; }
     section.inquiry .cta_section > p { margin-bottom: 3.75em; }
     
     section.inquiry form { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 50px; }

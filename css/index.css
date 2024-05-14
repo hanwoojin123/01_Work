@@ -471,7 +471,7 @@
 	/* ======= brand 영역 ======= */
 	
 	section.brand { padding: 4.375em 0; }
-	section.brand img { width: 100%; object-fit: cover; filter: brightness(0.8); }
+	section.brand img { width: 100%; max-height: 700px; object-fit: cover; filter: brightness(0.8); }
 
 	section.brand > div.info_wrap { position: absolute; top: 50%; left: 50%; width: 100%; transform: translate(-50%, -50%); color: #fff; text-align: center; }
 	section.brand > div.info_wrap > p.title { font-size: 2.1875em; font-family: "MontSerrat-Medium"; margin-bottom: 0.8571em; line-height: 1; }
